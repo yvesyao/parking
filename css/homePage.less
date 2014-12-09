@@ -1,3 +1,4 @@
+@import url(prefixer.less);
 html {
 	overflow: auto;
 	height: 100%;
@@ -12,20 +13,35 @@ body {
 }
 
 .level1 {
-background-color: #b00;
+	background-color: #b00;
 }
 .level2 {
-background-color: #f23030;
+	background-color: #f23030;
 }
 .level3 {
-background-color: #ff9f19;
+	background-color: #ff9f19;
 }
 .level4 {
-background-color: #17bf00;
+	background-color: #17bf00;
 }
 
 .popover {
 	max-width: 500px;
+	&.bottom {
+		margin-top: 1px;
+	}
+	.popover-dismiss {
+		float: right;
+		font-size: 21px;
+		font-weight: bold;
+		padding: 0 0.5em;
+		margin-right: 5px;
+		color: #666;
+		&:hover {
+			text-decoration: none;
+			color: #444;
+		}
+	}
 }
 #searchWrapper {
 	position: relative;
@@ -56,10 +72,10 @@ background-color: #17bf00;
 	width: 100%;
 	height: 32px;
 	left: 0;
-	z-index: 1000;
+	z-index: 2200;
 	background-color: #eee;
 	border-top: 1px solid #eaeaea;
-	border-bottom: 1px solid #ddd;
+	border-bottom: 1px solid #b7bdc5;
 	min-width: 960px;
 	line-height: 30px;
 	#bulletingBoard {
@@ -79,7 +95,6 @@ background-color: #17bf00;
 	width: 100%;
 	z-index: 0;
 	overflow: hidden;
-	@mapBorderColor: #b7bdc5;
 	#mapHolder {
 		background: #F3F3F3;
 		right: 0;
@@ -90,52 +105,18 @@ background-color: #17bf00;
 		@mapInfoConWidth: 349px;
 		position: relative;
 		background: #fff;
-		border-right: @mapBorderColor 1px solid;
 		left: 0;
 		top: 0;
 		float: left;
 		width: @mapInfoConWidth;
 		z-index: 50;
 		/* .transition(left ease 0.2s); */
-		overflow-y: scroll;
-		padding: 1em 0 7em 0;
+		overflow-y: auto;
+		padding: 1em 0;
 		&.pack {
 			width: 0px;
 			#mapInfo {
 				display: none;
-			}
-		}
-		#mapInfoTab {
-			@tabWidth: 18px;
-			@tabHeight: 63px;
-			position: absolute;
-			background-color: #fff;
-			border: 1px solid @mapBorderColor;
-			border-left: none;
-			border-radius: 0 4px 4px 0;
-			right: 0;
-			top: 50%;
-			width: @tabWidth;
-			height: @tabHeight;
-			margin-right: -@tabWidth;
-			margin-top: -@tabHeight;
-			z-index: 600;
-			cursor: pointer;
-			&:hover {
-				.glyphicon {
-					color: #3399FF;
-				}
-			}
-			.glyphicon {
-				@fontSize: 10px;
-				@lineHeight: @fontSize + 2;
-				position: absolute;
-				font-size: @fontSize;
-				color: @mapBorderColor;
-				top: 50%;
-				left: 1px;
-				line-height: @lineHeight;
-				margin-top: -@lineHeight/2;
 			}
 		}
 
@@ -255,6 +236,7 @@ background-color: #17bf00;
 			/* #poiTableList */
 		}
 
+
 		#areaSearch {
 			.title {
 				h4 {
@@ -273,6 +255,46 @@ background-color: #17bf00;
 				}
 			}
 			
+		}
+	}
+	/* #mapInfoCon */
+	#shad {
+		position: relative;
+		@shadBorderColor: #b7bdc5;
+		border-right: @shadBorderColor 1px solid;
+		#mapInfoTab {
+			@tabWidth: 18px;
+			@tabHeight: 63px;
+			position: absolute;
+			background-color: #fff;
+			border: 1px solid @shadBorderColor;
+			border-left: none;
+			border-radius: 0 4px 4px 0;
+			right: 0;
+			top: 50%;
+			width: @tabWidth;
+			height: @tabHeight;
+			margin-right: -@tabWidth;
+			margin-top: -@tabHeight/2;
+			z-index: 600;
+			cursor: pointer;
+			display: none;
+			&:hover {
+				.glyphicon {
+					color: #3399FF;
+				}
+			}
+			.glyphicon {
+				@fontSize: 10px;
+				@lineHeight: @fontSize + 2;
+				position: absolute;
+				font-size: @fontSize;
+				color: @shadBorderColor;
+				top: 50%;
+				left: 1px;
+				line-height: @lineHeight;
+				margin-top: -@lineHeight/2;
+			}
 		}
 	}
 }

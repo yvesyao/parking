@@ -45,10 +45,6 @@
 	</div>
 	<div id="wrapper">
 		<div id="mapInfoCon">
-			<div id="mapInfoTab" title="收起左栏">
-				<span class="glyphicon glyphicon-chevron-left"></span>
-			</div>
-			<!-- /#mapInfoTab -->
 			<div class="col-xs-12" id="mapInfo">
 				<div class="row" id="searchPanel">
 					<div class="col-xs-9">
@@ -70,87 +66,6 @@
 										<p class="address">长沙市韶山南路001号</p>
 									</td>
 								</tr>
-								<tr>
-									<th>
-										<div id="no2" class="icon" onclick="" title="在地图上显示该点"></div>
-									</th>
-									<td>
-										<div class="p-title"><a href="#" class="result-link" tid="poi-name-2">结果地址2</a></div>
-										<p class="address">长沙市韶山南路002号</p>
-									</td>
-								</tr>
-								<tr>
-									<th>
-										<div id="no3" class="icon" onclick="" title="在地图上显示该点"></div>
-									</th>
-									<td>
-										<div class="p-title"><a href="#" class="result-link" tid="poi-name-3">结果地址3</a></div>
-										<p class="address">长沙市韶山南路003号</p>
-									</td>
-								</tr>
-								<tr>
-									<th>
-										<div id="no4" class="icon" onclick="" title="在地图上显示该点"></div>
-									</th>
-									<td>
-										<div class="p-title"><a href="#" class="result-link" tid="poi-name-4">结果地址4</a></div>
-										<p class="address">长沙市韶山南路004号</p>
-									</td>
-								</tr>
-								<tr>
-									<th>
-										<div id="no5" class="icon" onclick="" title="在地图上显示该点"></div>
-									</th>
-									<td>
-										<div class="p-title"><a href="#" class="result-link" tid="poi-name-5">结果地址5</a></div>
-										<p class="address">长沙市韶山南路005号</p>
-									</td>
-								</tr>
-								<tr>
-									<th>
-										<div id="no6" class="icon" onclick="" title="在地图上显示该点"></div>
-									</th>
-									<td>
-										<div class="p-title"><a href="#" class="result-link" tid="poi-name-6">结果地址6</a></div>
-										<p class="address">长沙市韶山南路006号</p>
-									</td>
-								</tr>
-								<tr>
-									<th>
-										<div id="no7" class="icon" onclick="" title="在地图上显示该点"></div>
-									</th>
-									<td>
-										<div class="p-title"><a href="#" class="result-link" tid="poi-name-7">结果地址7</a></div>
-										<p class="address">长沙市韶山南路007号</p>
-									</td>
-								</tr>
-								<tr>
-									<th>
-										<div id="no8" class="icon" onclick="" title="在地图上显示该点"></div>
-									</th>
-									<td>
-										<div class="p-title"><a href="#" class="result-link" tid="poi-name-8">结果地址8</a></div>
-										<p class="address">长沙市韶山南路008号</p>
-									</td>
-								</tr>
-								<tr>
-									<th>
-										<div id="no9" class="icon" onclick="" title="在地图上显示该点"></div>
-									</th>
-									<td>
-										<div class="p-title"><a href="#" class="result-link" tid="poi-name-9">结果地址9</a></div>
-										<p class="address">长沙市韶山南路009号</p>
-									</td>
-								</tr>
-								<tr>
-									<th>
-										<div id="no10" class="icon" onclick="" title="在地图上显示该点"></div>
-									</th>
-									<td>
-										<div class="p-title"><a href="#" class="result-link" tid="poi-name-10">结果地址10</a></div>
-										<p class="address">长沙市韶山南路010号</p>
-									</td>
-								</tr>
 							</tbody>
 						</table>
 					</div>
@@ -160,7 +75,7 @@
 					<div class="col-xs-12 title">
 						<h4><span class="glyphicon glyphicon-globe"></span> 区域查找</h4>
 					</div>
-					<div class="col-xs-11">
+					<div class="col-xs-12">
 						<dl class="areas">
 							<dt>
 								<a href="#">天心区</a>
@@ -243,6 +158,15 @@
 			</div>
 		</div>
 		<!-- /#mapInfoCon -->
+
+		<div id="shad" class="pull-left">
+			<div id="mapInfoTab" title="收起左栏">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</div>
+			<!-- /#mapInfoTab -->
+		</div>
+		<!-- /#shad -->
+
 		<div id="mapHolder">
 			<!-- <img src="images/map.png" width="100%" alt="map" style="position:absolute;left:0;top:0;"> -->
 		</div>
@@ -252,7 +176,7 @@
 	<script src="plugins/zeroclipboard/ZeroClipboard.js"></script>
 	<script type="text/javascript" src="plugins/bootstrap-3.3.0/bootstrap.min.js"></script>
 	<script type="text/javascript" src="http://api.map.baidu.com/api?key=M6GifdEIjPmyvWagvcWpFUS2&v=2.0&services=ture"></script>
-    <script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
 	<script type="text/javascript" src="js/homePage.js"></script>
 </body>
 </html>

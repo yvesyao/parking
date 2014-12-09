@@ -10,6 +10,7 @@ window.$ && $(function() {
 		event.preventDefault();
 	});
 	adjustWindow();
+	$('#mapInfoTab').show();
 	$(window).resize(function() {
 		adjustWindow();
 	});
@@ -50,6 +51,7 @@ window.$ && $(function() {
 	})
 
 
+	var popoverTemplate = '<div class="popover" role="tooltip"><a href="#" class="popover-dismiss">&times;</a><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
 	/**
 	 * 路况工具弹窗
 	 */
@@ -58,13 +60,20 @@ window.$ && $(function() {
 		title: '实时路况',
 		content: '<div><span class="label level1">严重拥堵</span><span class="label level2">拥挤</span><span class="label level3">缓行</span><span class="label level4">畅通</span></div>',
 		html: true,
+		template: popoverTemplate,
 		placement: 'bottom'
 	}).on('shown.bs.popover', function() {
 		// do something…路况信息接口调用
-		console.log('路况信息接口调用');
+		enableTrafficTool();
+		$('#' + $(this).attr('aria-describedby')).find('.popover-dismiss').click(function(event) {
+			/* Act on the event */
+			event.preventDefault();
+			event.stopPropagation();
+			$('#trafficTool').popover('hide');
+		});
 	}).on('hide.bs.popover', function() {
 		// do something…取消路况信息接口
-		console.log('路况信息接口取消');
+		dismissTrafficTool();
 	});
 
 
@@ -92,6 +101,7 @@ window.$ && $(function() {
 		</div>\
 		<a href="#" style="line-height:34px;" data-clipboard-target="shareUrl" id="copyShareBtn">复制</a>\
 		</div>',
+		template: popoverTemplate,
 		html: true,
 		placement: 'bottom'
 	}).on('shown.bs.popover', function() {
@@ -140,6 +150,15 @@ window.$ && $(function() {
 		}
 	});
 
+	
+	function enableTrafficTool() {
+		console.log('路况信息接口调用');
+	}
+
+	/**/
+	function dismissTrafficTool() {
+		console.log('路况信息接口取消');
+	}
 
 	function doSearch(results) {
 		// 判断状态是否正确
@@ -394,8 +413,8 @@ function getRadius() {
 }
 
 function adjustWindow() {
-	var toolBar = document.getElementById('toolsContainer');
-	var _height = document.body.clientHeight - toolBar.clientHeight;
+	var _height = document.body.clientHeight - document.getElementById('searchWrapper').clientHeight - document.getElementById('toolsContainer').clientHeight;
 	document.getElementById('mapHolder').style.height = _height + 'px';
 	document.getElementById('mapInfoCon').style.height = _height + 'px';
+	document.getElementById('shad').style.height = _height + 'px';
 }
