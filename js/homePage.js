@@ -43,7 +43,7 @@ window.$ && $(function() {
 	 * 搜索按钮
 	 */
 	$('#searchBtn').click(function(event) {
-		/*do something...搜索接口调用*/
+		/*搜索接口调用*/
 		event.preventDefault();
 		var inputVal = $('#placeSearch').val();
 		if (!inputVal) return -1;
@@ -52,9 +52,9 @@ window.$ && $(function() {
 
 
 	var popoverTemplate = '<div class="popover" role="tooltip"><a href="#" class="popover-dismiss">&times;</a><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
-	/**
-	 * 路况工具弹窗
-	 */
+		/**
+		 * 路况工具弹窗
+		 */
 	$('#trafficTool').popover({
 		container: 'body',
 		title: '实时路况',
@@ -63,8 +63,8 @@ window.$ && $(function() {
 		template: popoverTemplate,
 		placement: 'bottom'
 	}).on('shown.bs.popover', function() {
-		// do something…路况信息接口调用
-		enableTrafficTool();
+		// 路况信息接口调用
+		trafficTool();
 		$('#' + $(this).attr('aria-describedby')).find('.popover-dismiss').click(function(event) {
 			/* Act on the event */
 			event.preventDefault();
@@ -72,23 +72,23 @@ window.$ && $(function() {
 			$('#trafficTool').popover('hide');
 		});
 	}).on('hide.bs.popover', function() {
-		// do something…取消路况信息接口
+		// 取消路况信息接口
 		dismissTrafficTool();
 	});
 
 
 	/**
-	 * 全屏工具入口
+	 * 全屏
 	 */
 	$('#toolFullScreen').click(function(event) {
 		event.preventDefault();
-		console.log('全屏工具接口调用');
+		fullScrTool();
 	});
 
 
 
 	/**
-	 * 分享工具入口
+	 * 分享
 	 */
 	ZeroClipboard.config({
 		swfPath: "plugins/zeroclipboard/ZeroClipboard.swf"
@@ -97,23 +97,27 @@ window.$ && $(function() {
 		container: 'body',
 		title: '分享当前地图上的内容',
 		content: '<div class="row">\
-		<div class="col-xs-9" style="padding-right:0;"><input type="text" class="form-control" id="shareUrl" />\
-		</div>\
-		<a href="#" style="line-height:34px;" data-clipboard-target="shareUrl" id="copyShareBtn">复制</a>\
-		</div>',
+	 	<div class="col-xs-9" style="padding-right:0;"><input type="text" class="form-control" id="shareUrl" />\
+	 	</div>\
+	 	<a href="#" style="line-height:34px;" data-clipboard-target="shareUrl" id="copyShareBtn">复制</a>\
+	 	</div>',
 		template: popoverTemplate,
 		html: true,
 		placement: 'bottom'
 	}).on('shown.bs.popover', function() {
-		// do something…路况信息接口调用
-		console.log('分享信息接口调用');
+		// 路况信息接口调用
+		shareTool($('#shareUrl'));
+		$('#' + $(this).attr('aria-describedby')).find('.popover-dismiss').click(function(event) {
+			/* Act on the event */
+			event.preventDefault();
+			event.stopPropagation();
+			$('#toolShare').popover('hide');
+		});
 		/**
 		 * 复制功能
 		 */
 		var client = new ZeroClipboard($("#copyShareBtn"));
 		client.on('ready', function(event) {
-			console.log('movie is loaded');
-
 			client.on('aftercopy', function(event) {
 				console.log('Copied text to clipboard: ' + event.data['text/plain']);
 				alert('复制成功！');
@@ -122,19 +126,19 @@ window.$ && $(function() {
 	});
 
 	/**
-	 * 点选工具入口
+	 * 点选工具
 	 */
 	$('#toolPointer').click(function(event) {
 		event.preventDefault();
-		console.log('点选工具接口调用');
+		pointerTool();
 	});
 
 	/**
-	 * 测距工具入口
+	 * 测距工具
 	 */
 	$('#toolMeasure').click(function(event) {
 		event.preventDefault();
-		console.log('测距工具接口调用');
+		measureTool();
 	});
 
 	/**
@@ -150,14 +154,38 @@ window.$ && $(function() {
 		}
 	});
 
-	
-	function enableTrafficTool() {
+	/**
+	 *
+	 *
+	 *
+	 * *****************工具栏功能入口*****************************************************************
+	 *
+	 *
+	 *
+	 */
+	function trafficTool() {
 		console.log('路况信息接口调用');
 	}
 
-	/**/
 	function dismissTrafficTool() {
 		console.log('路况信息接口取消');
+	}
+
+	function fullScrTool() {
+		console.log('全屏工具接口调用');
+	}
+
+	function pointerTool() {
+		console.log('点选工具接口调用');
+	}
+
+	function shareTool($inputHandler) {
+		$inputHandler.val('分享URL');
+		console.log('分享信息接口调用');
+	}
+
+	function measureTool() {
+		console.log('测距工具接口调用');
 	}
 
 	function doSearch(results) {
@@ -173,7 +201,7 @@ window.$ && $(function() {
 				var transformFun = change(results.getPoi(i).point, i, title);
 				transformFuns.push(transformFun);
 				var $tr = $('<tr></tr>');
-				console.log(title);
+				/*console.log(title);*/
 				$tr.append("<th></th>")
 					.children('th')
 					.append('<div class="icon" title="在地图上显示该点"></div>')
@@ -288,7 +316,9 @@ function changeResultsPanel(poi) {
 	document.getElementById("r-result").innerHTML = s.join("");
 }
 
-
+/**
+ * 搜索功能回调函数
+ */
 function searchCallback() {
 	/**
 	 * 搜索结果hover事件
@@ -303,11 +333,13 @@ function searchCallback() {
 		$(this).find('a.result-link').click();
 	});
 
+	/**
+	 * 搜索结果点击事件处理入口
+	 */
 	$('#poiTableList a.result-link').click(function(event) {
 		event.preventDefault();
 		event.stopPropagation();
 		var tid = $(this).attr('tid');
-		/*do something*/
 		transformFuns[tid]();
 		console.log('result' + tid + 'clicked');
 	})

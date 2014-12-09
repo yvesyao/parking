@@ -47,10 +47,24 @@
 		<div id="mapInfoCon">
 			<div class="col-xs-12" id="mapInfo">
 				<div class="row" id="searchPanel">
-					<div class="col-xs-9">
+					<div class="col-xs-7 no-padding-right">
 						<input type="text" class="form-control" id="placeSearch">
 					</div>
-					<a href="#" class="btn btn-primary" id="searchBtn">搜索</a>
+					<a href="#" id="searchBtn"><span class="glyphicon glyphicon-search"></span></a>
+					<div class="col-xs-4 no-padding-right">
+						<select id="sel" class="form-control">
+							<option value="300">
+								300米
+							</option>
+							<option value="500">
+								500米
+							</option>
+							<option value="1000" selected>
+								1000米
+							</option>
+						</select>
+					</div>
+					<!-- <a href="#" class="btn btn-primary" id="searchBtn">搜索</a> -->
 				</div>
 				<!-- /.row -->
 				<div class="row" id="searchResult">
