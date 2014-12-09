@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大数据智慧停车管理平台-form</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <!--[if lt IE 9]><script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script><![endif]-->
+</head>
+<body>
+  <header>
+
+  </header>
+  <div class="container">
+    <div class="page-header">
+      <h2>FORM表单</h2>
+    </div>
+    <form action="#" id="userForm" class="form-horizontal">
+      <h3 class="mb">form基础元素</h3>
+      <div class="form-group">
+        <label class="control-label col-sm-3" for="username">用户名</label>
+        <div class="col-sm-8 col-md-6 col-lg-5">
+          <input type="text" name="vo.username" class="form-control" id="username" placeholder="用户名">
+        </div>
+      </div>
+      <!-- /.form-group -->
+
+      <div class="form-group">
+        <label class="control-label col-sm-3" for="password">密码</label>
+        <div class="col-sm-8 col-md-6 col-lg-5">
+          <input type="password" name="vo.password" class="form-control" id="password"  placeholder="输入密码">
+        </div>
+      </div>
+      <!-- /.form-group -->
+
+      <div class="form-group">
+        <label class="control-label col-sm-3" for="name">姓名</label>
+        <div class="col-sm-8 col-md-6 col-lg-5">
+          <input type="text" name="vo.name" class="form-control" id="name" placeholder="姓名">
+        </div>
+      </div>
+      <!-- /.form-group -->
+
+      <div class="form-group">
+        <label class="control-label col-sm-3">权限</label>
+        <div class="col-sm-8 col-md-6 col-lg-5">
+
+          <div class="radio">
+            <label>
+              <input type="radio" name="vo.isAdmin" value="1"> 管理员
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="vo.isAdmin" value="0" checked> 普通用户
+            </label>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- /.form-group -->
+
+      <div class="form-group">
+        <label class="control-label col-sm-3">单选横排</label>
+        <div class="col-sm-8 col-md-6 col-lg-5">
+          <label class="radio-inline">
+            <input type="radio" name="isAdmin" value="1"> 管理员(用户管理，信息管理)
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="isAdmin" value="0" checked> 普通用户(自有信息管理)
+          </label>
+        </div>
+      </div>
+      <!-- /.form-group -->
+
+      <!-- /.form-group -->
+      <div class="form-group">
+        <label class="control-label col-sm-3">多选</label>
+        <div class="col-sm-8 col-md-6 col-lg-5">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="">
+              Option one is this and that&mdash;be sure to include why it's great
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="">
+              Option two
+            </label>
+          </div>
+        </div>
+      </div>
+      <!-- /.form-group -->
+
+      <div class="form-group">
+        <label class="control-label col-sm-3">多选横排</label>
+        <div class="col-sm-8 col-md-6 col-lg-5">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
+          </label>
+        </div>
+      </div>
+      <!-- /.form-group -->
+
+      <div class="form-group">
+        <label class="control-label col-sm-3">下拉列表</label>
+        <div class="col-sm-8 col-md-6 col-lg-5">
+          <select class="form-control" name="ddfdf">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+      </div>
+      <!-- /.form-group -->
+
+      <h3 class="mb">表单验证</h3>
+
+      <div class="form-group">
+        <label class="control-label col-sm-3" for="notNull">非空</label>
+        <div class="col-sm-8 col-md-6 col-lg-5">
+          <input type="text" name="feikong" class="form-control" id="notNull" placeholder="非空">
+        </div>
+      </div>
+      <!-- /.form-group -->
+
+      <div class="form-group">
+        <label class="control-label col-sm-3" for="length">长度限制</label>
+        <div class="col-sm-8 col-md-6 col-lg-5">
+          <input type="text" name="changdu" class="form-control" id="length" placeholder="非空">
+        </div>
+      </div>
+      <!-- /.form-group -->
+
+      <div class="form-group">
+        <label for="birth" class="control-label col-sm-3">日期</label>
+        <div class="col-sm-8 col-md-6 col-lg-5">
+          <input type="text" name="date" id="birth" class="datepicker form-control" autocomplete="off">
+        </div>
+        <!-- /.col-xs-8 -->
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-3" for="pwd">密码</label>
+        <div class="col-sm-8 col-md-6 col-lg-5">
+          <input type="password" name="pwd" class="form-control" id="pwd" placeholder="密码">
+        </div>
+      </div>
+      <!-- /.form-group -->
+
+      <div class="form-group">
+        <label class="control-label col-sm-3" for="cfm">确认密码</label>
+        <div class="col-sm-8 col-md-6 col-lg-5">
+          <input type="password" name="cfmPwd" class="form-control" id="cfm" placeholder="密码">
+        </div>
+      </div>
+      <!-- /.form-group -->
+
+
+
+
+
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-sm-8 col-md-offset-5 col-md-6 col-lg-offset-6 col-lg-5">
+          <button class="btn btn-primary" type="submit">提 交</button>
+          <button class="btn btn-default ml-15" data-dismiss="modal">取 消</button>
+        </div>
+      </div>
+      <!-- /.form-group -->
+
+    </form>
+
+  </div>
+<!-- 
+    <div class="alert alert-success fade hide" id="alertBox" role="alert">
+     <span class="content"></span>
+ </div>
+-->
+
+<footer class="bs-docs-footer" role="contentinfo">
+  <div class="container">
+    <p>版权信息</p>
+    <p class="text-right">Developed by Yves.</p>
+  </div>
+</footer>
+
+<!-- 必备 -->
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="plugins/bootstrap-3.3.0/bootstrap.min.js"></script>
+<!-- 表单验证 -->
+<script src="plugins/bootstrapValidator/bootstrapValidator.min.js"></script>
+<script src="plugins/bootstrapValidator/zh_CN.js"></script>
+<!-- 日期选择器 -->
+<script src="plugins/Datepicker-for-Bootstrap/bootstrap-datepicker.js"></script>
+
+<!-- 必备，放在最下 -->
+<script type="text/javascript" src="js/common.js"></script>
+<!-- external scripts -->
+<script type="text/javascript">
+window.$ && $(function() {
+
+  /**
+   * 日期选择
+   */
+   $('.datepicker').datepicker({
+    format: 'yyyy/mm/dd'
+  });
+
+  /**
+   * 表单验证
+   */
+   $('#userForm').bootstrapValidator({
+    feedbackIcons: {
+      valid: 'glyphicon glyphicon-ok',
+      invalid: 'glyphicon glyphicon-remove',
+      validating: 'glyphicon glyphicon-refresh'
+    },//feedbackIcons
+    fields: {
+      'feikong': {//使用name属性配置
+        validators: {
+          notEmpty: {
+            message: '这一项不能为空。'//错误信息，可不写
+          }
+        }
+      },
+      'changdu': {
+        validators: {
+          notEmpty: {},
+          stringLength: {
+            min: 5,
+            max: 20
+          }
+        }
+      },
+      'date': {
+        validators: {
+          notEmpty: {},
+          date: {
+            format: 'YYYY/MM/DD',
+            separator:"/"
+          }
+        }
+      },
+      'pwd': {
+        validators: {
+          notEmpty: {},
+          stringLength: {
+            min: 5,
+            max: 20
+          }
+        }
+      },
+      'cfmPwd': {
+        validators: {
+          notEmpty: {
+            message: '密码不能为空'
+          },
+          callback: {
+            callback: function(value, validator, $field) {
+              if (value != $('#pwd').val()) {
+                return {
+                  valid: false,
+                  message: '两次输入密码不一致'
+                };
+              }
+              return true;
+            }
+          }
+        }
+      }
+    }//fields
+  });
+});
+</script>
+</body>
+</html>

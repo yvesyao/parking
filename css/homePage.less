@@ -1,0 +1,278 @@
+html {
+	overflow: auto;
+	height: 100%;
+}
+body {
+	margin: 0;
+	color: #4c4c4c;
+	padding: 0;
+	min-width: 960px;
+	height: 100%;
+	overflow: hidden;
+}
+
+.level1 {
+background-color: #b00;
+}
+.level2 {
+background-color: #f23030;
+}
+.level3 {
+background-color: #ff9f19;
+}
+.level4 {
+background-color: #17bf00;
+}
+
+.popover {
+	max-width: 500px;
+}
+#searchWrapper {
+	position: relative;
+	height: 100px;
+	z-index: 1000;
+}
+#userInfo {
+	position: absolute;
+	right: 10px;
+	top: 6px;
+	z-index: 10;
+	zoom: 1;
+	text-align: right;
+	font: 12px Arial;
+	color: #000;
+	line-height: 18px;
+	ul {
+		list-style: none;
+		li {
+			float: left;
+		}
+	}
+}
+#brand {
+	padding: 6px 0 0 20px;
+}
+#toolsContainer {
+	width: 100%;
+	height: 32px;
+	left: 0;
+	z-index: 1000;
+	background-color: #eee;
+	border-top: 1px solid #eaeaea;
+	border-bottom: 1px solid #ddd;
+	min-width: 960px;
+	line-height: 30px;
+	#bulletingBoard {
+		height: 30px;
+		marquee {
+			span {
+				margin-right: 2em;
+			}
+		}
+	}
+	.tools {
+		margin-right: 1em;
+	}
+}
+#wrapper {
+	position: relative;
+	width: 100%;
+	z-index: 0;
+	overflow: hidden;
+	@mapBorderColor: #b7bdc5;
+	#mapHolder {
+		background: #F3F3F3;
+		right: 0;
+		position: relative;
+		z-index: 0;
+	}
+	#mapInfoCon {
+		@mapInfoConWidth: 349px;
+		position: relative;
+		background: #fff;
+		border-right: @mapBorderColor 1px solid;
+		left: 0;
+		top: 0;
+		float: left;
+		width: @mapInfoConWidth;
+		z-index: 50;
+		/* .transition(left ease 0.2s); */
+		overflow-y: scroll;
+		padding: 1em 0 7em 0;
+		&.pack {
+			width: 0px;
+			#mapInfo {
+				display: none;
+			}
+		}
+		#mapInfoTab {
+			@tabWidth: 18px;
+			@tabHeight: 63px;
+			position: absolute;
+			background-color: #fff;
+			border: 1px solid @mapBorderColor;
+			border-left: none;
+			border-radius: 0 4px 4px 0;
+			right: 0;
+			top: 50%;
+			width: @tabWidth;
+			height: @tabHeight;
+			margin-right: -@tabWidth;
+			margin-top: -@tabHeight;
+			z-index: 600;
+			cursor: pointer;
+			&:hover {
+				.glyphicon {
+					color: #3399FF;
+				}
+			}
+			.glyphicon {
+				@fontSize: 10px;
+				@lineHeight: @fontSize + 2;
+				position: absolute;
+				font-size: @fontSize;
+				color: @mapBorderColor;
+				top: 50%;
+				left: 1px;
+				line-height: @lineHeight;
+				margin-top: -@lineHeight/2;
+			}
+		}
+
+		#searchPanel {
+			margin-bottom: 1em;
+		}
+		#searchResult {
+			display: none;
+			#poiTableList {
+				border-collapse: collapse;
+				width: 100%;
+				tr {
+					th {
+						width: 31px;
+						text-align: left;
+						vertical-align: top;
+						div {
+							width: 19px;
+							height: 29px;
+							margin: 4px 0 0 7px;
+							background: url(http://webmap1.map.bdimg.com/newmap/static/common/images/markers_new_653df87.png) no-repeat;
+							_background: url(http://webmap1.map.bdimg.com/newmap/static/common/images/markers_new_ie6_843ae9b.png) no-repeat;
+							&.icon {
+								cursor: pointer;
+							}
+							&#no1 {
+								background-position: 0 -198px;
+								_background-position: 0 0;
+							}
+							&#no2 {
+								background-position: -24px -198px;
+								_background-position: -24px 0;
+							}
+							&#no3 {
+								background-position: -48px -198px;
+								_background-position: -48px 0;
+							}
+							&#no4 {
+								background-position: -72px -198px;
+								_background-position: -72px 0;
+							}
+							&#no5 {
+								background-position: -96px -198px;
+								_background-position: -96px 0;
+							}
+							&#no6 {
+								background-position: -120px -198px;
+								_background-position: -120px 0;
+							}
+							&#no7 {
+								background-position: -144px -198px;
+								_background-position: -144px 0;
+							}
+							&#no8 {
+								background-position: -168px -198px;
+								_background-position: -168px 0;
+							}
+							&#no9 {
+								background-position: -192px -198px;
+								_background-position: -192px 0;
+							}
+							&#no10 {
+								background-position: -216px -198px;
+								_background-position: -216px 0;
+							}
+						}
+					}
+					/* th */
+					&.focus-over {
+						background: #f6f6f6;
+						cursor: pointer;
+						#no1 {
+							background-position: 0 -230px;
+							_background-position: 0 -32px;
+						}
+						#no2 {
+							background-position: -24px -230px;
+							_background-position: -24px -32px;
+						}
+						#no3 {
+							background-position: -48px -230px;
+							_background-position: -48px -32px;
+						}
+						#no4 {
+							background-position: -72px -230px;
+							_background-position: -72px -32px;
+						}
+						#no5 {
+							background-position: -96px -230px;
+							_background-position: -96px -32px;
+						}
+						#no6 {
+							background-position: -120px -230px;
+							_background-position: -120px -32px;
+						}
+						#no7 {
+							background-position: -144px -230px;
+							_background-position: -144px -32px;
+						}
+						#no8 {
+							background-position: -168px -230px;
+							_background-position: -168px -32px;
+						}
+						#no9 {
+							background-position: -192px -230px;
+							_background-position: -192px -32px;
+						}
+						#no10 {
+							background-position: -216px -230px;
+							_background-position: -216px -32px;
+						}
+					}
+					/* &.focus-over */
+				}
+				/* tr */
+			}
+			/* #poiTableList */
+		}
+
+		#areaSearch {
+			.title {
+				h4 {
+					margin: 0 0 0.5em 0;
+				}
+			}
+			.areas {
+				dt {
+					margin: 0.5em 0 0.3em 0;
+				}
+				dd {
+					a {
+						margin-right: 0.5em;
+						font-size: 12px;
+					}
+				}
+			}
+			
+		}
+	}
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大数据智慧停车管理平台-登录</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <!--[if lt IE 9]><script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script><![endif]-->
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">大数据智慧停车管理平台</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">员工管理</a></li>
+            <li><a href="#">员工签到管理</a></li>
+            <li><a href="#">清算</a></li>
+            <li><a href="#">价格管理</a></li>
+            <!-- if isAdmin -->
+            <li><a href="#">用户信息维护</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <span class="glyphicon glyphicon-user"></span> 张三 <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">个人信息修改</a></li>
+                  <li><a href="tools/logout.jsp">注销</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+      </nav>
+    </header>
+    <div class="container">
+      <form action="#" id="userForm" class="form-horizontal">
+        <div class="form-group">
+          <label class="control-label col-sm-3" for="username">用户名</label>
+          <div class="col-sm-9">
+            <input type="text" name="username" data-rule="用户名:required;username" class="form-control" id="username" placeholder="用户名">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-3" for="password">密码</label>
+          <div class="col-sm-9">
+            <input type="text" name="password" data-rule="密码:required;password" class="form-control" id="password">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-3" for="name">姓名</label>
+          <div class="col-sm-9">
+            <input type="text" name="name" data-rule="姓名:required;length[1~10]" class="form-control" id="name" placeholder="姓名">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-sm-3">权限</label>
+          <div class="col-sm-9">
+
+            <div class="radio">
+              <label>
+                <input type="radio" name="isAdmin" value="1"> 管理员(用户管理，签到文件上传、下载)
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="isAdmin" value="0" checked> 普通用户(签到文件下载)
+              </label>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button class="btn btn-primary" type="submit">提 交</button>
+          <button class="btn btn-default" data-dismiss="modal">取 消</button>
+        </div>
+      </form>
+
+    </div>
+<!-- 
+    <div class="alert alert-success fade hide" id="alertBox" role="alert">
+     <span class="content"></span>
+ </div>
+-->
+
+<footer class="bs-docs-footer" role="contentinfo">
+  <div class="container">
+    <p>版权信息</p>
+    <p class="text-right">Developed by Yves.</p>
+  </div>
+</footer>
+
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="plugins/bootstrap-3.3.0/bootstrap.min.js"></script>
+<!-- external scripts -->
+<script type="text/javascript">
+window.$ && $(function() {
+ 
+});
+
+
+</script>
+</body>
+</html>

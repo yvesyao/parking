@@ -1,0 +1,111 @@
+@import url(../plugins/bootstrap-3.3.0/less/bootstrap.less);
+@import url(../plugins/bootstrap-3.3.0/less/theme.less);
+@import url(../plugins/Datepicker-for-Bootstrap/datepicker.css);
+
+
+/* overall */
+body {
+	font-family: Helvetica,"Heiti SC",sans-serif;
+	font-size: 14px;
+	background: #fff;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {
+	font-family: "Microsoft Yahei","微软雅黑",Helvetica,"Heiti SC",sans-serif;
+}
+hr {
+	border-bottom: 1px #aaa solid;
+}
+div.center, p.center, img.center, table.center {
+	margin-left: auto !important;
+	margin-right: auto !important;
+	float: none !important;
+	display: block;
+}
+.pt {
+	padding-top: 1em;
+}
+.ml {
+	margin-left: 1em;
+}
+.mr {
+	margin-right: 1em;
+}
+.mt {
+	margin-top: 2em;
+}
+.mt-one {
+	margin-top: 1em;
+}
+.mt-20 {
+	margin-top: 20px;
+}
+.mb {
+	margin-bottom: 2em;
+}
+.mb-20 {
+	margin-bottom: 20px;
+}
+.mb-15 {
+	margin-bottom: 15px;
+}
+.ml-15 {
+	margin-left: 15px;
+}
+.zoom {
+	width: 100%;
+	height: 100%;
+}
+.textJustify {
+	text-align:justify;
+	text-justify:inter-ideograph;
+}
+
+/* login */
+#page-login {
+	.input-group {
+		&.validate {
+			input {
+				/* 验证码 不允许输入中文*/
+				ime-mode: disabled;
+				text-transform: uppercase;
+			}
+			+ .form-control-feedback {
+				right: 94px;
+			}
+		}
+		.input-group-addon {
+			top: 0px;
+			&.validate {
+				padding: 0;
+				img {
+					border-radius: 0 4px 4px 0;
+				}
+			}
+			&:last-child{
+				border-radius: 0px 4px 4px 0px!important;
+				border-left: none;
+			}
+			&:first-child {
+				border-radius: 4px 0px 0px 4px!important;
+				border-right: none;
+			}
+		}
+	}
+}
+
+/* table */
+.del-btn {
+	@color: red;
+	color: @color;
+	&:hover {
+		color:darken(@color, 20%);
+	}
+}
+
+.table {
+	td {
+		a{
+			padding: 0 5px;
+		}
+	}
+}

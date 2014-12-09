@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>大数据智慧停车管理平台</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/homePage.css">
+
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<!--[if lt IE 9]><script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script><![endif]-->
+</head>
+<body>
+	<div id="searchWrapper">
+		<div id="userInfo">
+			<ul>
+				<li id="adminSystem">
+					<a target="_blank" href="login.html">后台管理<em></em></a>
+				</li>
+			</ul>
+		</div>
+		<div id="brand">
+			<h3 class="title">大数据智慧停车管理平台</h3>
+		</div>
+	</div>
+	<div id="toolsContainer">
+		<div class="col-xs-12">
+			<div class="col-xs-3" id="bulletingBoard">
+				<marquee loop="-1" scrollamount="2" onMouseOut="this.start();" onMouseOver="this.stop();">
+					<span>公告信息1</span>
+					<span>公告信息2</span>
+					<span>公告信息3</span>
+					<span>公告信息4</span>
+					<span>公告信息5</span>
+				</marquee>
+			</div>
+			<a href="#" id="toolFullScreen" class="pull-right tools"><span class="glyphicon glyphicon-fullscreen"></span> 全屏</a>
+			<a href="#" id="toolShare" class="pull-right tools"><span class="glyphicon glyphicon-share"></span> 分享</a>
+			<a href="#" id="trafficTool" class="pull-right tools"><span class="glyphicon glyphicon-road"></span> 路况</a>
+			<a href="#" id="toolPointer" class="pull-right tools"><span class="glyphicon glyphicon-map-marker"></span> 点选</a>
+			<a href="#" id="toolMeasure" class="pull-right tools"><span class="glyphicon glyphicon-resize-full"></span> 测距</a>
+		</div>
+		<!-- /.col-xs-12 -->
+	</div>
+	<div id="wrapper">
+		<div id="mapInfoCon">
+			<div id="mapInfoTab" title="收起左栏">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</div>
+			<!-- /#mapInfoTab -->
+			<div class="col-xs-12" id="mapInfo">
+				<div class="row" id="searchPanel">
+					<div class="col-xs-9">
+						<input type="text" class="form-control" id="placeSearch">
+					</div>
+					<a href="#" class="btn btn-primary" id="searchBtn">搜索</a>
+				</div>
+				<!-- /.row -->
+				<div class="row" id="searchResult">
+					<div class="col-xs-12">
+						<table id="poiTableList">
+							<tbody>
+								<tr>
+									<th>
+										<div id="no1" class="icon" onclick="" title="在地图上显示该点"></div>
+									</th>
+									<td>
+										<div class="p-title"><a href="#" class="result-link" tid="poi-name-1">结果地址1</a></div>
+										<p class="address">长沙市韶山南路001号</p>
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<div id="no2" class="icon" onclick="" title="在地图上显示该点"></div>
+									</th>
+									<td>
+										<div class="p-title"><a href="#" class="result-link" tid="poi-name-2">结果地址2</a></div>
+										<p class="address">长沙市韶山南路002号</p>
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<div id="no3" class="icon" onclick="" title="在地图上显示该点"></div>
+									</th>
+									<td>
+										<div class="p-title"><a href="#" class="result-link" tid="poi-name-3">结果地址3</a></div>
+										<p class="address">长沙市韶山南路003号</p>
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<div id="no4" class="icon" onclick="" title="在地图上显示该点"></div>
+									</th>
+									<td>
+										<div class="p-title"><a href="#" class="result-link" tid="poi-name-4">结果地址4</a></div>
+										<p class="address">长沙市韶山南路004号</p>
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<div id="no5" class="icon" onclick="" title="在地图上显示该点"></div>
+									</th>
+									<td>
+										<div class="p-title"><a href="#" class="result-link" tid="poi-name-5">结果地址5</a></div>
+										<p class="address">长沙市韶山南路005号</p>
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<div id="no6" class="icon" onclick="" title="在地图上显示该点"></div>
+									</th>
+									<td>
+										<div class="p-title"><a href="#" class="result-link" tid="poi-name-6">结果地址6</a></div>
+										<p class="address">长沙市韶山南路006号</p>
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<div id="no7" class="icon" onclick="" title="在地图上显示该点"></div>
+									</th>
+									<td>
+										<div class="p-title"><a href="#" class="result-link" tid="poi-name-7">结果地址7</a></div>
+										<p class="address">长沙市韶山南路007号</p>
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<div id="no8" class="icon" onclick="" title="在地图上显示该点"></div>
+									</th>
+									<td>
+										<div class="p-title"><a href="#" class="result-link" tid="poi-name-8">结果地址8</a></div>
+										<p class="address">长沙市韶山南路008号</p>
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<div id="no9" class="icon" onclick="" title="在地图上显示该点"></div>
+									</th>
+									<td>
+										<div class="p-title"><a href="#" class="result-link" tid="poi-name-9">结果地址9</a></div>
+										<p class="address">长沙市韶山南路009号</p>
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<div id="no10" class="icon" onclick="" title="在地图上显示该点"></div>
+									</th>
+									<td>
+										<div class="p-title"><a href="#" class="result-link" tid="poi-name-10">结果地址10</a></div>
+										<p class="address">长沙市韶山南路010号</p>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!-- /.row -->
+				<div class="row" id="areaSearch">
+					<div class="col-xs-12 title">
+						<h4><span class="glyphicon glyphicon-globe"></span> 区域查找</h4>
+					</div>
+					<div class="col-xs-11">
+						<dl class="areas">
+							<dt>
+								<a href="#">天心区</a>
+							</dt>
+							<dd>
+								<a href="#">区域1</a>
+								<a href="#">区域2</a>
+								<a href="#">区域3</a>
+								<a href="#">区域4</a>
+								<a href="#">区域5</a>
+								<a href="#">区域6</a>
+								<a href="#">区域7</a>
+								<a href="#">区域8</a>
+								<a href="#">区域9</a>
+								<a href="#">区域10</a>
+							</dd>
+							<dt>
+								<a href="#">芙蓉区</a>
+							</dt>
+							<dd>
+								<a href="#">区域1</a>
+								<a href="#">区域2</a>
+								<a href="#">区域3</a>
+								<a href="#">区域4</a>
+								<a href="#">区域5</a>
+								<a href="#">区域6</a>
+								<a href="#">区域7</a>
+								<a href="#">区域8</a>
+								<a href="#">区域9</a>
+								<a href="#">区域10</a>
+							</dd>
+							<dt>
+								<a href="#">岳麓区</a>
+							</dt>
+							<dd>
+								<a href="#">区域1</a>
+								<a href="#">区域2</a>
+								<a href="#">区域3</a>
+								<a href="#">区域4</a>
+								<a href="#">区域5</a>
+								<a href="#">区域6</a>
+								<a href="#">区域7</a>
+								<a href="#">区域8</a>
+								<a href="#">区域9</a>
+								<a href="#">区域10</a>
+							</dd>
+							<dt>
+								<a href="#">开福区</a>
+							</dt>
+							<dd>
+								<a href="#">区域1</a>
+								<a href="#">区域2</a>
+								<a href="#">区域3</a>
+								<a href="#">区域4</a>
+								<a href="#">区域5</a>
+								<a href="#">区域6</a>
+								<a href="#">区域7</a>
+								<a href="#">区域8</a>
+								<a href="#">区域9</a>
+								<a href="#">区域10</a>
+							</dd>
+							<dt>
+								<a href="#">雨花区</a>
+							</dt>
+							<dd>
+								<a href="#">区域1</a>
+								<a href="#">区域2</a>
+								<a href="#">区域3</a>
+								<a href="#">区域4</a>
+								<a href="#">区域5</a>
+								<a href="#">区域6</a>
+								<a href="#">区域7</a>
+								<a href="#">区域8</a>
+								<a href="#">区域9</a>
+								<a href="#">区域10</a>
+							</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /#mapInfoCon -->
+		<div id="mapHolder">
+			<!-- <img src="images/map.png" width="100%" alt="map" style="position:absolute;left:0;top:0;"> -->
+		</div>
+		<!-- /#mapHolder -->
+	</div>
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script src="plugins/zeroclipboard/ZeroClipboard.js"></script>
+	<script type="text/javascript" src="plugins/bootstrap-3.3.0/bootstrap.min.js"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?key=M6GifdEIjPmyvWagvcWpFUS2&v=2.0&services=ture"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js"></script>
+	<script type="text/javascript" src="js/homePage.js"></script>
+</body>
+</html>

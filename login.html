@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>大数据智慧停车管理平台-登录</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<!--[if lt IE 9]><script src="http://cdn.bootcss.com/html5shiv/r29/html5.min.js"></script><![endif]-->
+</head>
+<body>
+	<div class="container">
+		<div id="page-login" class="row">
+			<div class="page-header">
+				<h2>大数据智慧停车管理平台</h2>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+			<!-- <div class="text-right">
+				<a href="page_register_v1.html" class="txt-default">尚未注册?</a>
+			</div> -->
+			<div class="panel panel-default mt">
+				<div class="panel-body clearfix">
+					<form action="main.html" id="loginForm" class="form-horizontal"> 
+						<div class="row">
+							<div class="col-xs-offset-1 col-xs-10">
+								<h3>登录</h3>
+							</div>
+						</div>
+						<div class="form-group mt-one">
+							<div class="col-xs-offset-1 col-xs-10">
+								<div class="input-group">
+									<span class="input-group-addon glyphicon glyphicon-user"></span>
+									<input type="text" id="username" name="vo.username"
+									placeholder="用户名" class="form-control" autofocus> 
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-xs-offset-1 col-xs-10">
+								<div class="input-group">
+									<span class="input-group-addon glyphicon glyphicon-lock"></span>
+									<input type="password" id="password" name="vo.password"
+									placeholder="密码" class="form-control"> 
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-xs-offset-1 col-xs-10">
+								<div class="input-group validate">
+									<input type="text" name="validate" placeholder="验证码"
+									class="form-control" autocomplete="off"> 
+									<a href="#" class="input-group-addon validate" onclick="loadImage();"><img src="images/validate.png" id="validateImg" height="32" alt="验证码"> </a>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-offset-6 col-xs-5 col-sm-6 col-sm-offset-5 mb-15">
+							<input type="submit" value="登 录" class="btn btn-primary btn-block">
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="plugins/bootstrap-3.3.0/bootstrap.min.js"></script>
+<script src="plugins/bootstrapValidator/bootstrapValidator.min.js"></script>
+<script src="plugins/bootstrapValidator/zh_CN.js"></script>
+
+<!-- external scripts -->
+<script type="text/javascript">
+window.$ && $(function() {
+	$('#loginForm').bootstrapValidator({
+		feedbackIcons: {
+			valid: 'glyphicon glyphicon-ok',
+			invalid: 'glyphicon glyphicon-remove',
+			validating: 'glyphicon glyphicon-refresh'
+		}, //feedbackIcons
+		fields: {
+			'vo.username': {
+				/*validators: {
+					notEmpty: {
+						message:"用户名不能为空"
+					},
+					stringLength: {
+						min: 5,
+						max: 20
+					}
+				}*/
+			},
+			'vo.password': {
+				/*validators: {
+					notEmpty: {
+						message:"密码不能为空"
+					},
+					stringLength: {
+						min: 5,
+						max: 20
+					}
+				}*/
+			},
+			'validate': {
+				/*validators: {
+					notEmpty: {
+						message:"验证码不能为空"
+					},
+					stringLength: {
+						message:"请输入正确的验证码",
+						min: 4,
+						max: 4
+					}
+				}*/
+			}
+		} //fields
+	})
+	.on('success.form.bv', function(e) {
+            /*// Prevent form submission
+            e.preventDefault();
+            $('#msgBox').hide();
+            var $form = $(e.target);
+            var bv = $form.data('bootstrapValidator');
+            $.post($form.attr('action'), $form.serialize(), function(data) {
+                result = $.trim(data.result);
+                if(result == "登录成功") {
+                	window.location.href = "main.jsp";
+                }else {
+                	$('#msgBox').removeClass('hidden').show().children('.content').text(result);
+                	loadImage();
+                }
+            }, 'json');*/
+});
+});
+
+function loadImage() {
+	//$("#validateImg").attr("src", 'tools/validateImage.jsp?' + Math.random());
+}
+
+</script>
+</body>
+</html>
